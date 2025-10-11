@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Hammassugnment {
+    static int Sum;
+    static int hamm;
+    static int odd(){
+            int r =Sum%2;
+            if(r!=0){
+                hamm=0;
+            }
+            else{
+                hamm=1;
+            }
+            return hamm;
+    }
+    
+    
+    static int even(){
+         int r =Sum%2;
+            if(r!=0){
+                hamm=1;
+            }
+            else{
+                hamm=0;
+            }
+            return hamm;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer>A1 = new ArrayList<>(Arrays.asList(2,9,9,1,9,1,0,0,9,0,0,1,1,1,0,0,9,1));
+               String parityscheme ="odd";
+        for(int h=1;h<=5;h++){
+        Sum=0;
+        
+ 
+        for(int i=h-1;i<A1.size();i+=2*h){
+            Sum=Sum+A1.get(i);
+        }
+        if(parityscheme.equals("odd")){
+           hamm= odd();
+        }
+             if(parityscheme.equals("even")){
+           hamm =even();
+        }
+        System.out.println("h" + h + " Sum = " + Sum + " , Parity bit = " + hamm);
+    }
+}
+    
+}
